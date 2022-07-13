@@ -1,0 +1,103 @@
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 450px;
+}
+
+h1 {
+    white-space: nowrap;
+
+    color: rgb(55, 53, 47);
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 40px;
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    cursor: text;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    display: inline-flex;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+    white-space: pre-line;
+    border-radius: 4px;
+    height: auto;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 544;
+    letter-spacing: 0.00065em;
+    min-width: auto;
+
+    width: 100%;
+
+    min-height: 36px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+
+    background: #e16259;
+    color: #FFFFFF;
+    border: 1px solid #be5643;
+
+    text-decoration: none;
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    padding-bottom: 4px;
+    width: 100%;
+}
+
+.data-grid > .tag {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    width: 160px;
+    color: rgba(55, 53, 47, 0.65);
+}
+
+.data-grid > .tag .icon {
+    margin-right: 8px;
+}
+
+.data-grid > .tag .icon img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    flex-shrink: 0;
+    backface-visibility: hidden;
+}
+
+.data-grid > .tag p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 120%;
+    font-size: 14px;
+}
+
+.data-grid > .data {
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    width: 100%;
+    min-height: 34px;
+    padding: 6px 8px 7px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.data-grid > .data.no-data {
+    color: rgba(55, 53, 47, 0.5);
+}
