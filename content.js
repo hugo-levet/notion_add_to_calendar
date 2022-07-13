@@ -237,4 +237,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 
         response(eventInfo);
     }
+    if ((msg.from === 'popup') && (msg.subject === 'getUrl')) {
+        response(window.location.href);
+    }
 });

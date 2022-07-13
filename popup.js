@@ -32,9 +32,30 @@ const setEventInfo = info => {
     document.querySelector('#event-info .button').href = info.link || '';
 };
 
+// set report url
+const setReportUrl = url => {
+    const mailTo = "hugolevet.pro@gmail.com";
+    const pageName = "Event";
+    const mailToLink = `mailto:${mailTo}?subject=Report%20an%20error%20on%20the%20${pageName}%20page&body=I%20saw%20an%20error%20on%20the%20${pageName}%20page%20at%20${url}`
+
+    document.getElementById("report-page").href = mailToLink;
+}
+
 // Once the DOM is ready
 // get info of event
 window.addEventListener('DOMContentLoaded', () => {
+    // get url of page and set it to report button
+    chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    }, tabs => {
+        chrome.tabs.sendMessage(
+            tabs[0].id,
+            { from: 'popup', subject: 'getUrl' },
+            setReportUrl);
+    });
+
+    // get data from content script
     chrome.tabs.query({
         active: true,
         currentWindow: true

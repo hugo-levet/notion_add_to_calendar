@@ -101,3 +101,46 @@ h1 {
 .data-grid > .data.no-data {
     color: rgba(55, 53, 47, 0.5);
 }
+
+#report-page {
+    user-select: none;
+    transition: background 20ms ease-in 0s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 1;
+    white-space: nowrap;
+    height: 32px;
+    border-radius: 3px;
+    font-size: inherit;
+    line-height: 1.2;
+    min-width: 0px;
+    padding-left: 6px;
+    padding-right: 8px;
+    color: rgba(55, 53, 47, 0.65);
+    width: 100%;
+    margin-top: 8px;
+    justify-content: center;
+}
+
+#report-page:hover {
+    background: rgb(55, 53, 47, 0.08);
+}
+
+#report-page p {
+    white-space: nowrap;
+    word-break: break-word;
+    caret-color: rgb(55, 53, 47);
+    pointer-events: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#report-page img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    flex-shrink: 0;
+    backface-visibility: hidden;
+    margin-right: 8px;
+}
