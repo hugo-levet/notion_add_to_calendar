@@ -38,12 +38,15 @@ function getEventInfo() {
     let tmpDataDate = null;
     if (document.body.getElementsByClassName('typesDate').length > 0) {
         tmpDataDate = document.body.getElementsByClassName('typesDate')[0]
-            .parentNode.parentNode.parentNode.parentNode.parentNode
-            .querySelectorAll('div:last-of-type>div[role="button"]>div:first-of-type')[0]
+        .parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+            .querySelectorAll('div.notion-selectable.notion-page-block div[role="button"]>div:first-of-type')[0]
             .textContent;
         const regexDate = /(\w* \d{1,2}, \d{4}) (.*)-(.*)/gm; // date in english
         let dataDate;
         dataDate = regexDate.exec(tmpDataDate);
+
+        // Remove accents from the date string
+        tmpDataDate = tmpDataDate.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
         if (dataDate == null) {
             const regexDate = /(\d{1,2} \w* \d{4}) (.*)-(.*)/gm; // get french date

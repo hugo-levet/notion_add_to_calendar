@@ -34,9 +34,14 @@ function getCalendarLink() {
 
     // date
     let tmpDataDate = document.getElementsByClassName('typesDate')[0]
-        .parentNode.parentNode.parentNode.parentNode.parentNode
-        .querySelectorAll('div:last-of-type>div[role="button"]>div:first-of-type')[0]
+    .parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelectorAll(
+      'div.notion-selectable.notion-page-block div[role="button"]>div:first-of-type'
+    )[0]
         .textContent;
+
+    // Remove accents from the date string
+    tmpDataDate = tmpDataDate.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
     const regexDate = /(\w* \d{1,2}, \d{4}) (.*)-(.*)/gm;
     let dataDate;
     dataDate = regexDate.exec(tmpDataDate)
