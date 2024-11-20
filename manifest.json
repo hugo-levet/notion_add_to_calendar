@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "version": "2.1.0",
+    "version": "2.1.1",
     "name": "Notion - Add to calendar",
     "description": "This extension create a link for save notion event in google calendar",
     "offline_enabled": true,
